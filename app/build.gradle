@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        applicationId "com.demo.v3"
+        minSdkVersion 7
+        targetSdkVersion 22
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+//    splits {
+//        abi {
+//            enable true
+//            reset()
+//            include 'x86', 'armeabi-v7a'
+//            universalApk true
+//        }
+//    }
+//    sourceSets {
+//        main {
+//            res.srcDirs = ['src/main/res']
+//            jniLibs.srcDirs = ['src/main/jniLibs']
+//            jni.srcDirs = [] // This prevents the auto generation of Android.mk
+//        }
+//    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:22.0.0'
+    compile files('libs/MCRSDK.jar')
+    compile files('libs/PlayerSDK.jar')
+    compile files('libs/vmsnetsdk.jar')
+}
